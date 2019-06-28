@@ -1,0 +1,49 @@
+body {
+    background: #85a5d4;
+    display: flex;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    padding-top: 100px;
+}
+
+.content {
+    $color: #5572d6;
+
+    display: flex;
+    width: 900px;
+    background: white;
+    border-radius: 3px;
+}
+
+.tarifs {
+    $color: #5572d6;
+
+    display: flex;
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: -0.03em;
+
+
+    &__card {
+        width: 33%;
+        padding: 38px;
+        text-align: center;
+    }
+    &__img {
+        width: 70px;
+        margin-bottom: 20px;
+    }
+    &__header {
+        margin-bottom: 20px;
+        color: $color;
+        font-size: 19px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+    &__descr {
+        margin-bottom: 20px;
+    }
+    &__price {
+        color: $color;
+    }
+}

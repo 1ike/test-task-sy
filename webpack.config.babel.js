@@ -2,6 +2,7 @@ import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import webpackMerge from 'webpack-merge';
 import autoprefixer from 'autoprefixer';
 
@@ -42,6 +43,16 @@ const common = {
               sourceMap: true,
             },
           }],
+      }, {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images',
+            },
+          },
+        ],
       },
     ],
   },
@@ -52,6 +63,9 @@ const common = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
+    new CopyWebpackPlugin([
+      { from: './src/img', to: './img' },
+    ]),
   ],
 
 };
