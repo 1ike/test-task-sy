@@ -25,4 +25,8 @@ export default {
     //   price: '20',
     // },
   ],
+  modal: {
+    isOpen: false,
+    tarif: null,
+  },
 };

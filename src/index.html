@@ -9,14 +9,24 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!--
-    Welcome to your first asset!
-
-    You could've noticed there is a link to Roboto font in the head.
-    You can use it in css by typing font-family: Roboto, sans-serif;
-    and you can customize it by using font-weight (400, 500 etc. - numbers in the link tag)
-
-    Good luck and have fun!
-  -->
+  <main class="content">
+    <div class="tarifs"></div>
+    <button class="feedback-btn">Give feedback</button>
+  </main>
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal__dialog" role="document">
+      <div class="modal__header">
+        <h5 class="modal__title">Confirmation</h5>
+        <button type="button" class="modal__closeBtn" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal__body">
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn btn-primary">Confirm and pay</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

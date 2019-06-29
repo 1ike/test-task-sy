@@ -1,4 +1,4 @@
-export default (tarif) => {
+export default ({ tarif }) => {
   const card = document.createElement('div');
   card.classList.add('tarifs__card');
   card.setAttribute('role', 'button');
