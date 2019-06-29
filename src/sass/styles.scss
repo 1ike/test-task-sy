@@ -10,6 +10,10 @@ body {
     padding: 10px;
     background: #85a5d4;
     font-family: Roboto, sans-serif;
+
+    &.modal-open {
+        overflow: hidden;
+    }
 }
 
 .content {
@@ -38,7 +42,7 @@ body {
 .card {
     $color: #5572d6;
 
-    max-width: 450px;
+    max-width: 400px;
     padding: 20px;
     text-align: center;
 
@@ -106,25 +110,34 @@ body {
 
 .modal {
     position: fixed;
-    display: none;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    display: none;
     background: rgba(0,0,0,0.35);
     z-index: 1027;
     overflow-x: hidden;
     overflow-y: auto;
+    text-align: center;
 
     &--open {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        display: block;
+        // justify-content: center;
+        // align-items: flex-start;
     }
 
     &__dialog {
+        display: flex;
+        padding: 10px;
+        height: 100%;
+    }
+    &__content {
         position: relative;
-        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
         padding: 30px;
         background: white;
         border-radius: 3px;
@@ -143,5 +156,8 @@ body {
     }
     &__footer {
         text-align: center;
+    }
+    &__confirmation-btn {
+        margin: 30px auto 20px;
     }
 }
