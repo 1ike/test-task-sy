@@ -7,6 +7,7 @@ export default (props) => {
 
   tarifs.forEach((tarif) => {
     const tarifCard = renderTarifCard({ tarif });
+    tarifCard.classList.add('card--as-link');
     tarifCard.addEventListener('click', () => openModal(tarif.name));
     tarifsElem.appendChild(tarifCard);
   });

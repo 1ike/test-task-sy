@@ -3,11 +3,13 @@
 }
 
 body {
-    background: #85a5d4;
     display: flex;
+    align-content: stretch;
     justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    background: #85a5d4;
     font-family: Roboto, sans-serif;
-    padding-top: 100px;
 }
 
 .content {
@@ -16,14 +18,14 @@ body {
     background: white;
     border-radius: 3px;
     box-shadow: 0 10px 20px 3px rgba(0,0,0,0.25);
+    text-align: center;
 }
 
 .tarifs {
-    $color: #5572d6;
-
     display: flex;
     flex-grow: 1;
-    flex-wrap:  wrap;
+    flex-wrap: wrap;
+    align-items: flex-start;
     font-size: 14px;
     letter-spacing: -0.03em;
 
@@ -31,18 +33,25 @@ body {
         flex-direction: column;
         align-items: center;
     }
+}
 
+.card {
+    $color: #5572d6;
 
-    &__card {
+    max-width: 450px;
+    padding: 20px;
+    text-align: center;
+
+    &--as-link {
         width: 286px;
         padding: 20px 38px;
-        text-align: center;
         cursor: pointer;
         &:hover {
             background: #ececec;
             border-radius: 4px;
         }
     }
+
     &__img {
         width: 70px;
         margin-bottom: 20px;
@@ -78,32 +87,61 @@ body {
     }
 }
 
-.feedback-btn {
-    display: block;
-    margin: 30px auto 20px;
+.btn {
+    display: inline-block;
+    border: 0px;
+    background: rgba(0,0,0,0);
+    cursor: pointer;
+}
+.btn--primary {
     padding: 10px 30px;
     border: 0px;
     color: white;
     border-radius: 3px;
     background: #0045db;
-    cursor: pointer;
-
+}
+.feedback-btn {
+    margin: 30px auto 20px;
 }
 
 .modal {
     position: fixed;
+    display: none;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.35);
-    display: none;
+    z-index: 1027;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     &--open {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     &__dialog {
+        position: relative;
+        margin: 30px;
+        padding: 30px;
         background: white;
+        border-radius: 3px;
+    }
+    &__closeBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    &__title {
+        margin-top: 0px;
+        font-size: 16px;
+        text-align: center;
+    }
+    &__footer {
+        text-align: center;
     }
 }
