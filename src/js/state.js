@@ -18,5 +18,11 @@ export default {
       descr: 'Watch your favourite series at home on large screen with our TV application.',
       price: '20',
     },
+    // {
+    //   name: 'tv',
+    //   img: 'monitor.svg',
+    //   descr: 'Watch your favourite series at home on large screen with our TV application.',
+    //   price: '20',
+    // },
   ],
 };

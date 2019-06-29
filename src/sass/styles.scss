@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: #85a5d4;
     display: flex;
@@ -7,27 +11,37 @@ body {
 }
 
 .content {
-    $color: #5572d6;
-
-    display: flex;
     width: 900px;
+    padding: 20px 20px;
     background: white;
     border-radius: 3px;
+    box-shadow: 0 10px 20px 3px rgba(0,0,0,0.25);;
 }
 
 .tarifs {
     $color: #5572d6;
 
     display: flex;
-    padding: 10px 20px;
+    flex-grow: 1;
+    flex-wrap:  wrap;
     font-size: 14px;
     letter-spacing: -0.03em;
 
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
 
     &__card {
-        width: 33%;
-        padding: 38px;
+        width: 286px;
+        padding: 20px 38px;
         text-align: center;
+        &:hover {
+            background: #ececec;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     }
     &__img {
         width: 70px;
@@ -46,4 +60,31 @@ body {
     &__price {
         color: $color;
     }
+}
+
+.price {
+    &__currency {
+        position: relative;
+        display: inline-block;
+        top: -11px;
+        font-size: 14px;
+
+    }
+    &__value {
+        position: relative;
+        display: inline-block;
+        font-size: 30px;
+        font-weight: 500;
+    }
+}
+
+.feedback-btn {
+    display: block;
+    margin: 30px auto 20px;
+    padding: 10px 30px;
+    border: 0px;
+    color: white;
+    border-radius: 3px;
+    background: #0045db;
+
 }

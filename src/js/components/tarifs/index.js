@@ -9,9 +9,15 @@ export default (tarifs = []) => {
     wrapper.appendChild(tarifCard);
   });
 
+  const button = document.createElement('button');
+  button.classList.add('feedback-btn');
+  button.textContent = 'Give feedback';
+
+
   const main = document.createElement('main');
   main.classList.add('content');
   main.appendChild(wrapper);
+  main.appendChild(button);
 
   return main;
 };
