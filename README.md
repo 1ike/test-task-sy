@@ -1,6 +1,6 @@
 # Skyeng test job
 
-<!-- [![Build Status](https://travis-ci.org/1ike/test-task-1tv.svg?branch=master)](https://travis-ci.org/1ike/test-task-1tv) -->
+[![Build Status](https://travis-ci.com/1ike/test-task-sy.svg?branch=master)](https://travis-ci.com/1ike/test-task-sy)
 
 &nbsp;
 ## Задание
@@ -29,3 +29,5 @@
 [https://1ike.github.io/test-task-sy/](https://1ike.github.io/test-task-sy/)
 
 &nbsp;
+
+Код для **Extra task** находится в [ветке extra](https://github.com/1ike/test-task-sy/tree/extra).

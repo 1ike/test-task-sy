@@ -19,8 +19,9 @@ buttonClose.addEventListener('click', (event) => {
 
   closeModal();
 });
+const modalElemClose = modalElem.getElementsByClassName('modal__dialog')[0];
 modalElem.addEventListener('click', ({ target }) => {
-  if (target !== modalElem) return;
+  if (target !== modalElemClose) return;
   closeModal();
 });
 

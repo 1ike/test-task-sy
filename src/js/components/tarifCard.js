@@ -1,6 +1,7 @@
 export default ({ tarif }) => {
   const card = document.createElement('div');
   card.classList.add('card');
+  card.setAttribute('id', tarif.name);
   card.setAttribute('role', 'button');
 
   card.innerHTML = `
