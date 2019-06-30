@@ -6,34 +6,16 @@
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "*",
-    "babel-loader": "*",
-    "clean-webpack-plugin": "*",
-    "mini-css-extract-plugin": "*",
-    "css-loader": "*",
     "eslint": "*",
     "eslint-config-airbnb-base": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-jest": "*",
-    "html-webpack-plugin": "*",
     "jest": "*",
-    "jest-cli": "*",
-    "sass-loader": "*",
-    "postcss-loader": "*",
-    "webpack": "*",
-    "webpack-cli": "*",
-    "webpack-merge": "*",
-    "autoprefixer": "*",
-    "webpack-dev-server": "*"
+    "jest-cli": "*"
   },
   "scripts": {
-    "page": "webpack -p --env.page",
-    "server": "webpack-dev-server -d",
-    "lint": "eslint src"
-  },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ]
+    "lint": "eslint src",
+    "test": "jest --coverage",
+    "test-watch": "jest --no-cache --watchAll"
+  }
 }

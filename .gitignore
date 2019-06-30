@@ -1,4 +1,4 @@
-/node_modules
-/dist
-/design
+/node_modules/
 /.vscode
+/coverage/
+

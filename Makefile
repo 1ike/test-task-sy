@@ -1,9 +1,3 @@
-s:
-	npm run server
-
-page:
-	npm run page
-
 lint:
 	npm run lint
 
