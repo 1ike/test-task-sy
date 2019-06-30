@@ -1,9 +1,10 @@
-import sumBigInt from '../src/index';
+import sumBigInt from '../index';
 
 
 describe('sumBigInt', () => {
   test("it's alive!", () => {
-    expect(sumBigInt('1', '2')).toBe('3');
+    expect(sumBigInt('134', '297980')).toBe('298114');
+    expect(sumBigInt('2', `${Number.MAX_SAFE_INTEGER}`)).toBe('9007199254740993');
   });
 
   const errorText = 'Work only with positive Int.';

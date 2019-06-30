@@ -1,13 +1,27 @@
-const needBigInt = (numA, numB) => {
-  1;
+const sumByStrings = (a, b) => {
+  const smallerString = a.length <= b.length ? a : b;
+  const largerString = smallerString === b ? a : b;
 
-  return !Number.isSafeInteger(numA) || !Number.isSafeInteger(numB);
-};
+  const result = largerString
+    .split('')
+    .reverse()
+    .reduce((acc, char, idx) => {
+      const magicNumber = 10;
+      const digit = smallerString.length > idx
+        ? Number(smallerString[smallerString.length - idx - 1]) : 0;
+      const number = Number(char) + digit + Number(acc.increment);
+      const increment = magicNumber - number <= 0;
 
-const sum = (numA, numB) => {
-  1;
+      return {
+        string: `${increment ? (number % magicNumber) : number}${acc.string}`,
+        increment,
+      };
+    }, {
+      string: '',
+      increment: false,
+    });
 
-  return !Number.isSafeInteger(numA) || !Number.isSafeInteger(numB);
+  return result.increment ? `1${result.string}` : result.string;
 };
 
 export default (a, b) => {
@@ -22,5 +36,7 @@ export default (a, b) => {
     throw new Error('Work only with positive Int.');
   }
 
-  if (!needBigInt(numA, numB)) return String(numA + numB);
+  if (Number.MAX_SAFE_INTEGER - numA >= numB) return String(numA + numB);
+
+  return sumByStrings(a, b);
 };
