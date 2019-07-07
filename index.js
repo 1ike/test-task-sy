@@ -1,4 +1,4 @@
-const sumByStrings = (a, b) => {
+export const sumByStrings = (a, b) => {
   const smallerString = a.length <= b.length ? a : b;
   const largerString = smallerString === b ? a : b;
 
@@ -9,19 +9,19 @@ const sumByStrings = (a, b) => {
       const magicNumber = 10;
       const digit = smallerString.length > idx
         ? Number(smallerString[smallerString.length - idx - 1]) : 0;
-      const number = Number(char) + digit + Number(acc.increment);
-      const increment = magicNumber - number <= 0;
+      const number = Number(char) + digit + Number(acc.needIncrement);
+      const needIncrement = magicNumber - number <= 0;
 
       return {
-        string: `${increment ? (number % magicNumber) : number}${acc.string}`,
-        increment,
+        string: `${needIncrement ? (number % magicNumber) : number}${acc.string}`,
+        needIncrement,
       };
     }, {
       string: '',
-      increment: false,
+      needIncrement: false,
     });
 
-  return result.increment ? `1${result.string}` : result.string;
+  return result.needIncrement ? `1${result.string}` : result.string;
 };
 
 export default (a, b) => {
@@ -36,7 +36,7 @@ export default (a, b) => {
     throw new Error('Work only with positive Int.');
   }
 
-  if (Number.MAX_SAFE_INTEGER - numA >= numB) return String(numA + numB);
+  // if (Number.MAX_SAFE_INTEGER - numA >= numB) return String(numA + numB);
 
   return sumByStrings(a, b);
 };
